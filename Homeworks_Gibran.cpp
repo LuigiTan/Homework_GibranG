@@ -8,7 +8,74 @@ void DigPar();
 void NumAlto();
 void ParMinMax();
 
+int main()
+{
+    int HWChoice = 0;
+    bool ExitMain = false;
 
+    do
+    {
+        cout << "Bienvenido el conjunto de tareas realizadas por Gibran Garcia Coss y Leon" << endl;
+        cout << "Durante la clase de Programacion 2 en la carrera de Ingenieria de programacion de videojuegos" << endl;
+        cout << "Elija la tarea que quiera correr: \n1.Tarea 1\n2.Salir" << endl;
+        cin >> HWChoice;
+
+        switch (HWChoice)
+        {
+        case 1:
+            system("cls");
+            Tarea1();
+            break;
+
+        case 2:
+            ExitMain = true;
+            break;
+
+        default:
+            cout << "Opcion no valida" << endl;
+        }
+
+    } while (ExitMain == false);
+
+}
+
+void Tarea1()
+{
+    int MenuTarea1 = 0;
+    cout << "-----------Elija que ejercicio desea ver-----------" << endl;
+    cout << "1. Determinar si un numero es positivo o negativo" << endl;
+    cout << "2. Suma de los 2 digitos de un numero dado" << endl;
+    cout << "3. Determinar si los digitos de un numero son par o impar" << endl;
+    cout << "4. Determinar que numero es el mas alto de 3 numeros" << endl;
+    cout << "5. Todos los numeros pares dentro de un rango dado" << endl;
+    cin >> MenuTarea1;
+    switch (MenuTarea1)
+    {
+    case 1:
+        PoN();
+        break;
+
+    case 2:
+        Sum2Dig();
+        break;
+
+    case 3:
+        DigPar();
+        break;
+
+    case 4:
+        NumAlto();
+        break;
+    case 5:
+        ParMinMax();
+        break;
+    default:
+        cout << "Opcion no valida";
+        break;
+
+    }
+
+}
 
 void PoN()
 {
@@ -172,72 +239,7 @@ void ParMinMax()
 }
 
 
-void Tarea1()
-{
-    int MenuTarea1 = 0;
-    cout << "-----------Elija que ejercicio desea ver-----------" << endl;
-    cout << "1. Determinar si un numero es positivo o negativo" << endl;
-    cout << "2. Suma de los 2 digitos de un numero dado" << endl;
-    cout << "3. Determinar si los digitos de un numero son par o impar" << endl;
-    cout << "4. Determinar que numero es el mas alto de 3 numeros" << endl;
-    cout << "5. Todos los numeros pares dentro de un rango dado" << endl;
-    cin >> MenuTarea1;
-    switch (MenuTarea1)
-    {
-    case 1:
-        PoN();
-        break;
 
-    case 2:
-        Sum2Dig();
-        break;
 
-    case 3:
-        DigPar();
-        break;
 
-    case 4:
-        NumAlto();
-        break;
-    case 5:
-        ParMinMax();
-        break;
-    default:
-        cout << "Opcion no valida";
-        break;
-
-    }
-
-}
-
-int main()
-{
-    int HWChoice = 0;
-    bool ExitMain = false;
-
-    do
-    {
-        cout << "Bienvenido el conjunto de tareas realizadas por Gibran Garcia Coss y Leon" << endl;
-        cout << "Durante la clase de Programacion 2 en la carrera de Ingenieria de programacion de videojuegos" << endl;
-        cout << "Elija la tarea que quiera correr: \n1.Tarea 1\n2.Salir" << endl;
-        cin >> HWChoice;
-
-        switch (HWChoice)
-        {
-        case 1:
-            system("cls");
-            Tarea1();
-            break;
-
-        case 2:
-            ExitMain = true;
-            break;
-
-        default:
-            cout << "Opcion no valida" << endl;
-        }
-
-    } while (ExitMain == false);
-
-}
 
