@@ -1,7 +1,8 @@
-
+#include <Windows.h>
 #include <iostream>
 using namespace std;
 void Tarea1();
+void PiedraPapeloTijera();
 void PoN();
 void Sum2Dig();
 void DigPar();
@@ -17,7 +18,7 @@ int main()
     {
         cout << "Bienvenido el conjunto de tareas realizadas por Gibran Garcia Coss y Leon" << endl;
         cout << "Durante la clase de Programacion 2 en la carrera de Ingenieria de programacion de videojuegos" << endl;
-        cout << "Elija la tarea que quiera correr: \n1.Tarea 1\n2.Salir" << endl;
+        cout << "Elija la tarea que quiera correr: \n1.Tarea 1\n2.Piedra Papel o Tijera\n3.Salir" << endl;
         cin >> HWChoice;
 
         switch (HWChoice)
@@ -28,9 +29,14 @@ int main()
             break;
 
         case 2:
-            ExitMain = true;
+            system("cls");
+            PiedraPapeloTijera();
             break;
 
+
+        case 3:
+            ExitMain = true;
+            break;
         default:
             cout << "Opcion no valida" << endl;
         }
@@ -238,8 +244,107 @@ void ParMinMax()
 
 }
 
+void PiedraPapeloTijera()
+{
+
+    int SeleccionCompu;
+    int SeleccionUsuario = 0;
+    int PuntuacionUsuario = 0;
+    int PuntuacionCompu = 0;
+
+    cout << "Bienvenido a el piedra papel o tijera!" << endl;
+    do {
+        cout << "Jugaras contra la maquina y el primero en ganar 2 de 3 ganara el juego" << endl;
+        do {
+            srand(time(NULL));
+            SeleccionCompu = (rand() % 2) + 1; ///Se pone aqui para que se genere un numero nuevo cada ciclo
+            cout << "Elije tu arma 1.Piedra 2.Papel 3.Tijera" << endl;
+            cout << "Puntuacion del usuario: " << PuntuacionUsuario << endl;
+            cout << "Puntuacion de la computadora: " << PuntuacionCompu << endl;
+            cout << "MODO TEST: El numero que eligio la computadora es: " << SeleccionCompu <<endl;
+            cin >> SeleccionUsuario;
+            switch (SeleccionUsuario) {
+            case 1:
+                cout << "Seleccionaste: **PIEDRA**" << endl;
+                break;
+
+            case 2:
+                cout << "Seleccionaste: **PAPEL**" << endl;
+                break;
+
+            case 3:
+                cout << "Seleccionaste: **TIJERA**" << endl;
+                break;
+
+            default:
+                cout << "Opcion invalida, porfavor selecciona uno de los 3 numeros señalados" << endl;
+                break;
+
+            }
+        } while (SeleccionUsuario > 3 || SeleccionUsuario < 1);
+
+        ///Informamos que eligio la computadora///
+        if (SeleccionCompu == 1) {
+            cout << "Tu Computadora selecciono: **PIEDRA**\n" << endl;
+        }
+        else if (SeleccionCompu == 2) {
+            cout << "Tu Computadora selecciono: **PAPEL**\n" << endl;
+        }
+        else if (SeleccionCompu == 3) {
+            cout << "Tu Computadora selecciono: **TIJERA**\n" << endl;
+        }
+
+        ///Comparacion de opciones///
+        ///Casos en los que se gana///
+        if (SeleccionUsuario == 1 && SeleccionCompu == 3) {
+            cout << "GANASTE LA RONDA\n" << endl;
+            PuntuacionUsuario = PuntuacionUsuario + 1;
+        }
+        else if (SeleccionUsuario == 2 && SeleccionCompu == 1) {
+            cout << "GANASTE LA RONDA\n" << endl;
+            PuntuacionUsuario = PuntuacionUsuario + 1;
+        }
+        else if (SeleccionUsuario == 3 && SeleccionCompu == 2) {
+            cout << "GANASTE LA RONDA\n" << endl;
+            PuntuacionUsuario = PuntuacionUsuario + 1;
+        }
+
+        ///Casos en los que se pierde///
+
+        else if (SeleccionUsuario == 3 && SeleccionCompu == 1) {
+            cout << "Perdiste la ronda...\n" << endl;
+            PuntuacionCompu = PuntuacionCompu + 1;
+        }
+        else if (SeleccionUsuario == 1 && SeleccionCompu == 2) {
+            cout << "Perdiste la ronda...\n" << endl;
+            PuntuacionCompu = PuntuacionCompu + 1;
+        }
+        else if (SeleccionUsuario == 2 && SeleccionCompu == 3) {
+            cout << "Perdiste la ronda...\n" << endl;
+            PuntuacionCompu = PuntuacionCompu + 1;
+        }
+
+        ///Caso de empate///
+
+        else if (SeleccionUsuario == SeleccionCompu) {
+            cout << "Los dos seleccionaron lo mismo..." << endl;
+        }
 
 
-
-
-
+        if (PuntuacionUsuario == 2) {
+            cout << "Ganaste el juego!!!!" << endl;
+            system("Color 01"); //Recordatorio de que en esta funcion el primer caracter (despues de color) es el background y el segundo es el color del texto
+            Sleep(250);
+            system("Color 04");
+            Sleep(250);
+            system("Color 02");
+            Sleep(250);
+            system("Color 01");
+            Sleep(250);
+            system("Color 07");
+        }
+        else if (PuntuacionCompu == 2) {
+            cout << "La computadora gano el juego, vuelve a intentarlo" << endl;
+        }
+    } while (PuntuacionCompu != 2 && PuntuacionUsuario != 2);
+}
