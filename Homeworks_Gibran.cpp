@@ -81,11 +81,11 @@ void JuegoAhorcado()
         cout << "| | / /      ||" << endl;
         cout << "| |/ /       ||" << endl;
         cout << "| | /        ||     " << endl;
-        cout << "| |/         |/       " << endl;
+        cout << "| |/         ||       " << endl;
         cout << "| |          ||      " << endl;
-        cout << "| |          (\\     " << endl;
-        cout << "| |           `--'  " << endl;
-        cout << "| |               " << endl;
+        cout << "| |         //\\\\     " << endl;
+        cout << "| |        ((  ))" << endl;
+        cout << "| |         `--'      " << endl;
         cout << "| |       " << endl;
         cout << "| |      " << endl;
         cout << "| |     " << endl;
@@ -95,9 +95,9 @@ void JuegoAhorcado()
         cout << "| |         " << endl;
         cout << "| |         " << endl;
         cout << "----------| _        | ---| " << endl;
-        cout << "|-|-------\ \            " << endl;
-        cout << "| |        \ \        | |" << endl;
-        cout << ": :         \ \       : :  " << endl;
+        cout << "|-|-------\\ \\            " << endl;
+        cout << "| |        \\ \\       | |" << endl;
+        cout << ": :         \\ \\       : :  " << endl;
         cout << ". .          `'       . ." << endl;
         do
         {
@@ -110,6 +110,7 @@ void JuegoAhorcado()
                cout << "Tu progreso hasta ahora:  " << WordsSoFar << endl;
                cout << "Ya has usado estas letras hasta ahora: " << UsedLetters << endl;
                cin >> UserLetter;
+               system("cls");
                if (UserLetter == '0' || UserLetter == '1' || UserLetter == '2' || UserLetter == '3' || UserLetter == '4' || UserLetter == '5' || UserLetter == '6' || UserLetter == '7' || UserLetter == '8' || UserLetter == '9')
                {
                    cout << "No se permiten numeros, ni ninguna de las palabras los contienen, Cease please" << endl;
@@ -146,13 +147,38 @@ void JuegoAhorcado()
        }
        switch (UserAttempts)
        {
+       case 0:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||     " << endl;
+           cout << "| |/         ||       " << endl;
+           cout << "| |          ||      " << endl;
+           cout << "| |         //\\\\     " << endl;
+           cout << "| |        ((  ))" << endl;
+           cout << "| |         `--'      " << endl;
+           cout << "| |       " << endl;
+           cout << "| |      " << endl;
+           cout << "| |     " << endl;
+           cout << "| |         " << endl;
+           cout << "| |          " << endl;
+           cout << "| |          " << endl;
+           cout << "| |         " << endl;
+           cout << "| |         " << endl;
+           cout << "----------| _        | ---| " << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\       | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
+           break;
        case 1:
            cout << " ___________.._______" << endl;
            cout << "| .__________))______|" << endl;
            cout << "| | / /      ||" << endl;
            cout << "| |/ /       ||" << endl;
            cout << "| | /        ||.-''." << endl;
-           cout << "| |/         |/     \ " << endl;
+           cout << "| |/         |/     \\ " << endl;
            cout << "| |          ||     | " << endl;
            cout << "| |          (\\`_.' " << endl;
            cout << "| |         " << endl;
@@ -166,19 +192,111 @@ void JuegoAhorcado()
            cout << "| |          " << endl;
            cout << "| |          " << endl;
            cout << "----------| _        | ---| " << endl;
-           cout << "|-|-------\ \            " << endl;
-           cout << "| |        \ \        | |" << endl;
-           cout << ": :         \ \       : :  " << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\        | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
            cout << ". .          `'       . ." << endl;
            
            break;
        case 2:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||.-''." << endl;
+           cout << "| |/         |/     \\ " << endl;
+           cout << "| |          ||     | " << endl;
+           cout << "| |          (\\`_.' " << endl;
+           cout << "| |         .-`--'. " << endl;
+           cout << "| |         Y     Y " << endl;
+           cout << "| |          |   |  " << endl;
+           cout << "| |          |   | " << endl;
+           cout << "| |          |   | " << endl;
+           cout << "| |          -----" << endl;
+           cout << "| |          " << endl;
+           cout << "| |         " << endl;
+           cout << "| |          " << endl;
+           cout << "| |         " << endl;
+           cout << "----------| _        | ---| " << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\        | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
            break;
        case 3:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||.-''." << endl;
+           cout << "| |/         |/     \\ " << endl;
+           cout << "| |          ||     | " << endl;
+           cout << "| |          (\\`_.' " << endl;
+           cout << "| |         .-`--'. " << endl;
+           cout << "| |        /Y     Y\\ " << endl;
+           cout << "| |       // |   | " << endl;
+           cout << "| |      //  |   |  " << endl;
+           cout << "| |    (')   |   |   " << endl;
+           cout << "| |          -----" << endl;
+           cout << "| |                    " << endl;
+           cout << "| |                 " << endl;
+           cout << "| |                 " << endl;
+           cout << "| |                 " << endl;
+           cout << "----------| _        | ---| " << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\        | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
            break;
        case 4:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||.-''." << endl;
+           cout << "| |/         |/     \\ " << endl;
+           cout << "| |          ||     | " << endl;
+           cout << "| |          (\\`_.' " << endl;
+           cout << "| |         .-`--'. " << endl;
+           cout << "| |        /Y     Y\\ " << endl;
+           cout << "| |       // |   | \\\\ " << endl;
+           cout << "| |      //  |   |  \\\\" << endl;
+           cout << "| |    (')   |   |   (`)" << endl;
+           cout << "| |          -----" << endl;
+           cout << "| |                    " << endl;
+           cout << "| |                 " << endl;
+           cout << "| |                 " << endl;
+           cout << "| |                 " << endl;
+           cout << "----------| _        | ---| " << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\        | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
            break;
        case 5:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||.-''." << endl;
+           cout << "| |/         |/     \\ " << endl;
+           cout << "| |          ||     | " << endl;
+           cout << "| |          (\\`_.' " << endl;
+           cout << "| |         .-`--'. " << endl;
+           cout << "| |        /Y     Y\\ " << endl;
+           cout << "| |       // |   | \\\\ " << endl;
+           cout << "| |      //  |   |  \\\\" << endl;
+           cout << "| |    (')   |   |   (`)" << endl;
+           cout << "| |          ||   " << endl;
+           cout << "| |          ||   " << endl;
+           cout << "| |          ||   " << endl;
+           cout << "| |          ||   " << endl;
+           cout << "| |         / |     " << endl;
+           cout << "----------| _`-'     | ---| " << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\        | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
            break;
        case 6:
            cout << " ___________.._______" << endl;
@@ -186,25 +304,30 @@ void JuegoAhorcado()
            cout << "| | / /      ||" << endl;
            cout << "| |/ /       ||" << endl;
            cout << "| | /        ||.-''." << endl;
-           cout << "| |/         |/     \ " << endl;
+           cout << "| |/         |/     \\ " << endl;
            cout << "| |          ||     | " << endl;
            cout << "| |          (\\`_.' " << endl;
            cout << "| |         .-`--'. " << endl;
-           cout << "| |        /Y     Y\ " << endl;
-           cout << "| |       // |   | \\ " << endl;
-           cout << "| |      //  |   |  \\" << endl;
-           cout << "| |     ')   |   |   (`" << endl;
+           cout << "| |        /Y     Y\\ " << endl;
+           cout << "| |       // |   | \\\\ " << endl;
+           cout << "| |      //  |   |  \\\\" << endl;
+           cout << "| |    (')   |   |   (`)" << endl;
            cout << "| |          || ||" << endl;
            cout << "| |          || ||" << endl;
            cout << "| |          || ||" << endl;
            cout << "| |          || ||" << endl;
-           cout << "| |         / | | \ " << endl;
+           cout << "| |         / | | \\ " << endl;
            cout << "----------| _`-' `-' | ---| " << endl;
-           cout << "|-|-------\ \            " << endl;
-           cout << "| |        \ \        | |" << endl;
-           cout << ": :         \ \       : :  " << endl;
-           cout << ". .          `'       . ." << endl;
-           cout << "\n\nAHORCADO, Fin del juego" << endl;
+           cout << "|-|-------\\ \\            " << endl;
+           cout << "| |        \\ \\        | |" << endl;
+           cout << ": :         \\ \\       : :  " << endl;
+           cout << ". .          `'       . .\n\n" << endl;
+
+           cout << "             ------------------------------------------------------------------" << endl;
+           cout << ">>>>>>>>>>>>>|                                                                |<<<<<<<<<<<<<" << endl;
+           cout << ">>>>>>>>>>>>>|                      AHORCADO, Fin del juego                   |<<<<<<<<<<<<<" << endl;
+           cout << ">>>>>>>>>>>>>|                                                                |<<<<<<<<<<<<<" << endl;
+           cout << "             ------------------------------------------------------------------" << endl;
            break;
        }
        if (WordsSoFar==CHOSENWORD)
