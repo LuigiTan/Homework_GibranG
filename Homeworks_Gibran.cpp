@@ -1,5 +1,8 @@
 #include <Windows.h>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
 using namespace std;
 void Tarea1();
 void PiedraPapeloTijera();
@@ -8,6 +11,7 @@ void Sum2Dig();
 void DigPar();
 void NumAlto();
 void ParMinMax();
+void JuegoAhorcado();
 
 int main()
 {
@@ -18,7 +22,7 @@ int main()
     {
         cout << "Bienvenido el conjunto de tareas realizadas por Gibran Garcia Coss y Leon" << endl;
         cout << "Durante la clase de Programacion 2 en la carrera de Ingenieria de programacion de videojuegos" << endl;
-        cout << "Elija la tarea que quiera correr: \n1.Tarea 1\n2.Piedra Papel o Tijera\n3.Salir" << endl;
+        cout << "Elija la tarea que quiera correr: \n1.Tarea 1\n2.Piedra Papel o Tijera\n3.Juego de ahorcado \n4.Salir" << endl;
         cin >> HWChoice;
 
         switch (HWChoice)
@@ -33,8 +37,11 @@ int main()
             PiedraPapeloTijera();
             break;
 
-
         case 3:
+            system("cls");
+            JuegoAhorcado();
+            break;
+        case 4:
             ExitMain = true;
             break;
         default:
@@ -43,6 +50,147 @@ int main()
 
     } while (ExitMain == false);
 
+}
+
+
+void JuegoAhorcado()
+{
+    int TotalAttempts = 6;
+    int UserAttempts = 0;
+
+    vector<string>WordOptions;
+    WordOptions.push_back("ABEJA");
+    WordOptions.push_back("OSCURIDAD");
+    WordOptions.push_back("ESPADA");
+    WordOptions.push_back("CASTILLO");
+    WordOptions.push_back("ESTERNOMASCLOIDEO");
+    WordOptions.push_back("PROTOCOL");
+
+    srand(time(NULL));
+    random_shuffle(WordOptions.begin(), WordOptions.end());
+    const string CHOSENWORD = WordOptions[0];
+    string UsedLetters = "";
+    string WordsSoFar(CHOSENWORD.size(),  '-' );
+    char UserLetter;
+    cout << "Bienvenido al juego del ahorcado, tienes 6 vidas para adivinar la palabra seleccionada" << endl;
+    cout << "[TEST MODE]: Tu palabra es: " << CHOSENWORD << " recuerda, solo tienes 6 vidas. Este es el espacio vacio de esta: " << WordsSoFar << endl;
+
+      
+        cout << " ___________.._______" << endl;
+        cout << "| .__________))______|" << endl;
+        cout << "| | / /      ||" << endl;
+        cout << "| |/ /       ||" << endl;
+        cout << "| | /        ||     " << endl;
+        cout << "| |/         |/       " << endl;
+        cout << "| |          ||      " << endl;
+        cout << "| |          (\\     " << endl;
+        cout << "| |           `--'  " << endl;
+        cout << "| |               " << endl;
+        cout << "| |       " << endl;
+        cout << "| |      " << endl;
+        cout << "| |     " << endl;
+        cout << "| |         " << endl;
+        cout << "| |          " << endl;
+        cout << "| |          " << endl;
+        cout << "| |         " << endl;
+        cout << "| |         " << endl;
+        cout << "----------| _        | ---| " << endl;
+        cout << "|-|-------\ \            " << endl;
+        cout << "| |        \ \        | |" << endl;
+        cout << ": :         \ \       : :  " << endl;
+        cout << ". .          `'       . ." << endl;
+        do
+        {
+
+        
+       cout << "Introduce las letras que creas que estan en la palabra seleccionada " << endl;
+       cout << "Tu progreso hasta ahora:  " << WordsSoFar << endl;
+       cin >> UserLetter;
+       UserLetter = toupper(UserLetter);
+       if (CHOSENWORD.find(UserLetter) != string::npos)
+       {
+           for (int i = 0; i < CHOSENWORD.length(); i++)
+           {
+               if (CHOSENWORD[i] == UserLetter)
+                   WordsSoFar[i] = UserLetter;
+           }
+       }
+       else
+       {
+           UserAttempts++;
+           UsedLetters += UserLetter;
+       }
+       switch (UserAttempts)
+       {
+       case 1:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||.-''." << endl;
+           cout << "| |/         |/     \ " << endl;
+           cout << "| |          ||     | " << endl;
+           cout << "| |          (\\`_.' " << endl;
+           cout << "| |         " << endl;
+           cout << "| |        " << endl;
+           cout << "| |        " << endl;
+           cout << "| |      " << endl;
+           cout << "| |     " << endl;
+           cout << "| |        " << endl;
+           cout << "| |         " << endl;
+           cout << "| |          " << endl;
+           cout << "| |          " << endl;
+           cout << "| |          " << endl;
+           cout << "----------| _        | ---| " << endl;
+           cout << "|-|-------\ \            " << endl;
+           cout << "| |        \ \        | |" << endl;
+           cout << ": :         \ \       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
+           
+           break;
+       case 2:
+           break;
+       case 3:
+           break;
+       case 4:
+           break;
+       case 5:
+           break;
+       case 6:
+           cout << " ___________.._______" << endl;
+           cout << "| .__________))______|" << endl;
+           cout << "| | / /      ||" << endl;
+           cout << "| |/ /       ||" << endl;
+           cout << "| | /        ||.-''." << endl;
+           cout << "| |/         |/     \ " << endl;
+           cout << "| |          ||     | " << endl;
+           cout << "| |          (\\`_.' " << endl;
+           cout << "| |         .-`--'. " << endl;
+           cout << "| |        /Y     Y\ " << endl;
+           cout << "| |       // |   | \\ " << endl;
+           cout << "| |      //  |   |  \\" << endl;
+           cout << "| |     ')   |   |   (`" << endl;
+           cout << "| |          || ||" << endl;
+           cout << "| |          || ||" << endl;
+           cout << "| |          || ||" << endl;
+           cout << "| |          || ||" << endl;
+           cout << "| |         / | | \ " << endl;
+           cout << "----------| _`-' `-' | ---| " << endl;
+           cout << "|-|-------\ \            " << endl;
+           cout << "| |        \ \        | |" << endl;
+           cout << ": :         \ \       : :  " << endl;
+           cout << ". .          `'       . ." << endl;
+           cout << "\n\nAHORCADO, Fin del juego" << endl;
+           break;
+       }
+       if (WordsSoFar==CHOSENWORD)
+       {
+           cout << "CORRECTO!!! GANASTE Y TE SALVASTE DE LA HORCA" << endl;
+       }
+        } while (WordsSoFar!=CHOSENWORD);
+    
+
+    
 }
 
 void Tarea1()
@@ -347,4 +495,8 @@ void PiedraPapeloTijera()
             cout << "La computadora gano el juego, vuelve a intentarlo" << endl;
         }
     } while (PuntuacionCompu != 2 && PuntuacionUsuario != 2);
+
+
+
+
 }
