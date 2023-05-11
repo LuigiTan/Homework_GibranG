@@ -102,18 +102,42 @@ void JuegoAhorcado()
         do
         {
 
-        
-       cout << "Introduce las letras que creas que estan en la palabra seleccionada " << endl;
-       cout << "Tu progreso hasta ahora:  " << WordsSoFar << endl;
-       cin >> UserLetter;
+            do
+            {
+
+            
+               cout << "Introduce las letras que creas que estan en la palabra seleccionada " << endl;
+               cout << "Tu progreso hasta ahora:  " << WordsSoFar << endl;
+               cout << "Ya has usado estas letras hasta ahora: " << UsedLetters << endl;
+               cin >> UserLetter;
+               if (UserLetter == '0' || UserLetter == '1' || UserLetter == '2' || UserLetter == '3' || UserLetter == '4' || UserLetter == '5' || UserLetter == '6' || UserLetter == '7' || UserLetter == '8' || UserLetter == '9')
+               {
+                   cout << "No se permiten numeros, ni ninguna de las palabras los contienen, Cease please" << endl;
+               }
+
+
+            } while (UserLetter == '0' || UserLetter == '1' || UserLetter == '2' || UserLetter == '3' || UserLetter == '4' || UserLetter == '5' || UserLetter == '6' || UserLetter == '7' || UserLetter == '8' || UserLetter == '9');
+       
+            
        UserLetter = toupper(UserLetter);
-       if (CHOSENWORD.find(UserLetter) != string::npos)
+       if (UsedLetters.find(UserLetter) != string::npos)
+       {
+           cout << "             ------------------------------------------------------------------" << endl;
+           cout << "             |                                                                |" << endl;
+           cout << ">>>>>>>>>>>>>|Esa letra ya la has usado, te la perdonaremos asi que elige otra|<<<<<<<<<<<<<" << endl;
+           cout << "             |                                                                |" << endl;
+           cout << "             ------------------------------------------------------------------" << endl;
+
+       }
+       else if (CHOSENWORD.find(UserLetter) != string::npos)
        {
            for (int i = 0; i < CHOSENWORD.length(); i++)
            {
                if (CHOSENWORD[i] == UserLetter)
                    WordsSoFar[i] = UserLetter;
            }
+       
+
        }
        else
        {
@@ -185,9 +209,14 @@ void JuegoAhorcado()
        }
        if (WordsSoFar==CHOSENWORD)
        {
-           cout << "CORRECTO!!! GANASTE Y TE SALVASTE DE LA HORCA" << endl;
+           cout << "             ------------------------------------------------------------------" << endl;
+           cout << "             |                                                                |" << endl;
+           cout << ">>>>>>>>>>>>>|          CORRECTO!!! GANASTE Y TE SALVASTE DE LA HORCA         |<<<<<<<<<<<<<" << endl;
+           cout << "             |                                                                |" << endl;
+           cout << "             ------------------------------------------------------------------" << endl;
+
        }
-        } while (WordsSoFar!=CHOSENWORD);
+        } while (WordsSoFar!=CHOSENWORD && UserAttempts!=TotalAttempts);
     
 
     
